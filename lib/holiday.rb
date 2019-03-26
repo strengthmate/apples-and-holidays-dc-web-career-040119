@@ -70,21 +70,13 @@ def all_supplies_in_holidays(holiday_hash)
     # puts "#{season.capitalize}: #{supply}: #{supply}"
     
     holiday_hash.each do |season, data|
-      data.each do |attribute, value|
-    puts "#{season.capitalize}:"
-      if attribute.size = 1
-        puts "  #{attribute.capitalize}: #{value.join(", ")}"
-      else
-        attribute = attribute.split(" ")
-        attribute.each do |i|
-          i.capitalize!
-        puts "  #{attribute}: #{value.join(", ")}"
+      puts "#{season.capitalize}:"
+      holidays.each do |holiday, supplies|
+        puts"  #{holiday.to_s.split('_').map {|w| w.capitalize }.join(' ') }: #{supplies.join(", ")}"
+        end
       end
-    puts "  #{attribute.to_s.capitalize!}: #{value.join(", ")}"
-  end
-  end
-
-end
+    end
+  
 
 def all_holidays_with_bbq(holiday_hash)
   # return an array of holiday names (as symbols) where supply lists
